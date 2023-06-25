@@ -3,32 +3,34 @@ const sequelize = require("../config/dbConfig");
 const { Users } = require("./users");
 
 const PBMCSample = sequelize.define(
-	"PBMCSample",
+	"pbmc_sample",
 	{
 		id: {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true,
 		},
-		subjectId: DataTypes.STRING,
-		visitName: DataTypes.STRING,
-		modifyAliquot: DataTypes.STRING,
-		aliquotStored: DataTypes.STRING,
-		roomAllocation: DataTypes.STRING,
-		tankNumberId: DataTypes.STRING,
-		boxNumber: DataTypes.STRING,
-		column: DataTypes.STRING,
-		row: DataTypes.STRING,
+		pbmcsampletid: DataTypes.STRING,
+		boxid: DataTypes.STRING,
+		aliquotid: DataTypes.STRING,
+		subject: DataTypes.STRING,
+		visitname: DataTypes.STRING,
+		sampletype: DataTypes.STRING,
+		aliquot: DataTypes.STRING,
+		aid: DataTypes.STRING,
+		roomlocation: DataTypes.STRING,
+		freezernumber: DataTypes.INTEGER,
+		boxnumber: DataTypes.INTEGER,
+		columnnumber: DataTypes.INTEGER,
+		rownumber: DataTypes.INTEGER,
+		shipped: DataTypes.STRING,
+		shippeddate: DataTypes.DATE,
 		comments: DataTypes.STRING,
-		aliquotid: DataTypes.INTEGER,
-		boxid: DataTypes.INTEGER,
 	},
-	{ timestamps: true }
+	{ timestamps: true, underscored: true }
 );
 
-PBMCSample.belongsTo(Users, { foreignKey: "userId" });
-Users.hasMany(PBMCSample, { foreignKey: "userId" });
+PBMCSample.belongsTo(Users, { foreignKey: "user_id" });
+Users.hasMany(PBMCSample, { foreignKey: "user_id" });
 
-PBMCSample.sync();
-
-module.exports = PBMCSample;
+module.exports = { PBMCSample };

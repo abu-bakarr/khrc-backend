@@ -1,11 +1,11 @@
 {
 	"development": {
-		"username": "postgres",
-		"password": "JxUir.9UH.ykMhe",
-		"database": "postgres",
-		"host": "db.vfcjsmlzkmlysxvkquce.supabase.co",
+		"username": "lovel",
+		"password": "root",
+		"database": "khrc",
+		"host": "localhost",
 		"dialect": "postgresql",
-		"port": 6543
+		"port": 5432
 	},
 	"test": {
 		"username": "root",

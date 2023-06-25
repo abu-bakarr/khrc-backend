@@ -8,8 +8,12 @@ const swaggerDocument = require("./utils/swagger.json");
 const app = express();
 require("dotenv").config();
 
+// Auth routes
 const authRoutes = require("./routes/auth.js");
+// User routes
 const userRoutes = require("./routes/user.js");
+// ebl2012 routes
+const ebl2012Routes = require("./routes/ebl2012.js");
 
 app.use(cors());
 app.use(logger("dev"));
@@ -19,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/ebl2012", ebl2012Routes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get("/api", (req, res) => {

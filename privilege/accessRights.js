@@ -4,9 +4,13 @@ const canViewProject = (user, projects) => {
 	return user.role === ROLE.ADMIN || projects.userID === user.id;
 };
 
-const canAccesData = (user, projects) => {
+const canAccesData = async (user, projects) => {
 	if (user.role === ROLE.ADMIN) return projects;
-	return projects.filter((proj) => proj.email === user.email);
+	console.log("user", user);
+	console.log("projects", projects);
+	return await projects.filter(
+		(proj) => proj?.pbmc_sample.dataValues.user_id === user.id
+	);
 };
 
 const canDelete = (user) => {

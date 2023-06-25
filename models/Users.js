@@ -3,7 +3,7 @@ const sequelize = require("../config/dbConfig");
 const bcrypt = require("bcrypt");
 
 const Users = sequelize.define(
-	"Users",
+	"tbl_user",
 	{
 		id: {
 			type: DataTypes.INTEGER,
@@ -53,8 +53,5 @@ const Users = sequelize.define(
 		},
 	}
 );
-Users.sync();
-
-sequelize.sync({ alter: true });
 
 module.exports = { Users };
