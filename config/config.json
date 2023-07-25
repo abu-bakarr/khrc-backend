@@ -1,5 +1,5 @@
 {
-	"development": {
+	"test": {
 		"username": "lovel",
 		"password": "root",
 		"database": "khrc",
@@ -7,12 +7,12 @@
 		"dialect": "postgresql",
 		"port": 5432
 	},
-	"test": {
-		"username": "root",
-		"password": null,
-		"database": "database_test",
-		"host": "127.0.0.1",
-		"dialect": "mysql"
+	"development": {
+		"username": "postgres",
+		"password": "Ebovac@2023",
+		"database": "postgres",
+		"host": "db.vfcjsmlzkmlysxvkquce.supabase.co",
+		"dialect": "postgresql"
 	},
 	"production": {
 		"username": "root",

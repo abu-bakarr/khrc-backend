@@ -21,6 +21,7 @@ module.exports = {
 				res.json({ error: "User not found" });
 				return;
 			}
+			console.log("data:", user);
 
 			const userPass = user.dataValues.password;
 			const isMatch = await bcrypt.compareSync(password, userPass);
@@ -31,13 +32,12 @@ module.exports = {
 
 			const payload = {
 				user: {
-					id: user.dataValues.id,
+					id: user.dataValues.user_id,
 					email,
 					role: user.dataValues.role,
 					name: user.dataValues.firstName,
 				},
 			};
-			console.log("payload BACKEND", payload);
 
 			const token = await jsonwebtoken.sign(payload, process.env.JWT_SECRET, {
 				expiresIn: "10d",

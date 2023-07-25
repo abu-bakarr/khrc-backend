@@ -38,7 +38,7 @@ const SampleReceipt = sequelize.define(
 	}
 );
 
-SampleReceipt.belongsTo(Users, { foreignKey: "user_id", targetKey: "id" });
-Users.hasMany(SampleReceipt, { foreignKey: "user_id", sourceKey: "id" });
+SampleReceipt.belongsTo(Users, { foreignKey: "user_id", targetKey: "user_id" });
+Users.hasMany(SampleReceipt, { foreignKey: "user_id", sourceKey: "user_id" });
 
 module.exports = { SampleReceipt };

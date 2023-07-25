@@ -1,74 +1,157 @@
+// module.exports = {
+// 	up: async (queryInterface, DataTypes) => {
+// 		await queryInterface.createTable("pbmc_samples", {
+// 			id: {
+// 				type: DataTypes.INTEGER,
+// 				autoIncrement: true,
+// 				primaryKey: true,
+// 			},
+// 			pbmcsampletid: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			boxid: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			aliquotid: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			subject: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			visitname: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			sampletype: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			aliquot: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			aid: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			roomlocation: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			freezernumber: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			boxnumber: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			columnnumber: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			rownumber: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			shipped: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			shippeddate: {
+// 				type: DataTypes.DATE,
+// 				allowNull: false,
+// 			},
+// 			comments: {
+// 				type: DataTypes.STRING,
+// 			},
+// 			created_at: {
+// 				type: DataTypes.DATE,
+// 				allowNull: false,
+// 			},
+// 			updated_at: {
+// 				type: DataTypes.DATE,
+// 				allowNull: false,
+// 			},
+// 			user_id: {
+// 				type: DataTypes.INTEGER,
+// 				allowNull: false,
+// 				references: {
+// 					model: "tbl_users",
+// 					key: "id",
+// 				},
+// 				onUpdate: "CASCADE",
+// 				onDelete: "CASCADE",
+// 			},
+// 		});
+// 	},
+
+// 	down: async (queryInterface) => {
+// 		await queryInterface.dropTable("pbmc_samples");
+// 	},
+// };
+
 module.exports = {
-	up: async (queryInterface, DataTypes) => {
+	up: async (queryInterface, Sequelize) => {
 		await queryInterface.createTable("pbmc_samples", {
 			id: {
-				type: DataTypes.INTEGER,
+				type: Sequelize.INTEGER,
 				autoIncrement: true,
 				primaryKey: true,
 			},
 			pbmcsampletid: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			boxid: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			aliquotid: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			subject: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			visitname: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			sampletype: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			aliquot: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			aid: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			roomlocation: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			freezernumber: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			boxnumber: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			columnnumber: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			rownumber: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			shipped: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			shippeddate: {
-				type: DataTypes.DATE,
+				type: Sequelize.DATE,
 				allowNull: false,
 			},
 			comments: {
-				type: DataTypes.STRING,
+				type: Sequelize.STRING,
 			},
 			created_at: {
-				type: DataTypes.DATE,
+				type: Sequelize.DATE,
 				allowNull: false,
 			},
 			updated_at: {
-				type: DataTypes.DATE,
+				type: Sequelize.DATE,
 				allowNull: false,
 			},
 			user_id: {
-				type: DataTypes.INTEGER,
+				type: Sequelize.INTEGER,
 				allowNull: false,
 				references: {
 					model: "tbl_users",
-					key: "id",
+					key: "user_id",
 				},
 				onUpdate: "CASCADE",
 				onDelete: "CASCADE",

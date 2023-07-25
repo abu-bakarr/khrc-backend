@@ -3,9 +3,9 @@ const sequelize = require("../config/dbConfig");
 const bcrypt = require("bcrypt");
 
 const Users = sequelize.define(
-	"tbl_user",
+	"tbl_users",
 	{
-		id: {
+		user_id: {
 			type: DataTypes.INTEGER,
 			autoIncrement: true,
 			primaryKey: true,
@@ -20,7 +20,6 @@ const Users = sequelize.define(
 		username: DataTypes.STRING,
 		role: DataTypes.STRING,
 		email: DataTypes.STRING,
-
 		password: DataTypes.STRING,
 	},
 	{ timestamps: true },
