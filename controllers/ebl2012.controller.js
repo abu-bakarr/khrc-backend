@@ -71,11 +71,10 @@ module.exports = {
 					{
 						model: Users,
 						attributes: ["firstName"],
-						order: [["createdAt", "ASC"]],
 					},
 				],
+				order: [["createdAt", "DESC"]],
 			});
-
 			return res.status(201).json({ data: data });
 		} catch (error) {
 			return res.status(500).json({
@@ -151,9 +150,9 @@ module.exports = {
 					{
 						model: Users,
 						attributes: ["firstName"],
-						order: [["createdAt", "ASC"]],
 					},
 				],
+				order: [["createdAt", "DESC"]],
 			});
 
 			return res.status(201).json({ data: data });
@@ -231,9 +230,9 @@ module.exports = {
 					{
 						model: Users,
 						attributes: ["firstName"],
-						order: [["createdAt", "ASC"]],
 					},
 				],
+				order: [["createdAt", "DESC"]],
 			});
 
 			return res.status(201).json({ data: humorals });
